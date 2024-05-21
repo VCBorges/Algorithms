@@ -1,7 +1,7 @@
 from typing import MutableSequence
 from rich import print
 
-def count_split_inversions(
+def merge_and_count_split_inversions(
     left_arr: MutableSequence[int],
     right_arr: MutableSequence[int], 
 ) -> tuple[MutableSequence[int], int]:
@@ -25,7 +25,7 @@ def count_split_inversions(
     return merged_arr, inversions
 
 
-def count_inversions(
+def sort_and_count_inversions(
     arr: MutableSequence[int],
 ) -> tuple[MutableSequence[int], int]:
     length = len(arr)
@@ -33,10 +33,10 @@ def count_inversions(
         return arr, 0
     
     middle_idx = length // 2
-    left_arr, left_inv = count_inversions(arr[:middle_idx])
-    right_arr, right_inv = count_inversions(arr[middle_idx:])
+    left_arr, left_inv = sort_and_count_inversions(arr[:middle_idx])
+    right_arr, right_inv = sort_and_count_inversions(arr[middle_idx:])
     
-    merged_arr, split_inv = count_split_inversions(
+    merged_arr, split_inv = merge_and_count_split_inversions(
         left_arr=left_arr, 
         right_arr=right_arr,
     )
@@ -44,4 +44,4 @@ def count_inversions(
     
 input = [6, 5, 4, 4, 3, 2, 1]
 
-print(count_inversions(input))
+print(sort_and_count_inversions(input))
