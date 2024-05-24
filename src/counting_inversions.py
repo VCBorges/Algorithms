@@ -2,9 +2,9 @@ from typing import MutableSequence
 from rich import print
 
 def merge_and_count_split_inversions(
-    left_arr: MutableSequence[int],
-    right_arr: MutableSequence[int], 
-) -> tuple[MutableSequence[int], int]:
+    left_arr: list[int],
+    right_arr: list[int], 
+) -> tuple[list[int], int]:
     merged_arr = []
     right_idx, left_idx = 0, 0
     inversions = 0
@@ -25,9 +25,7 @@ def merge_and_count_split_inversions(
     return merged_arr, inversions
 
 
-def sort_and_count_inversions(
-    arr: MutableSequence[int],
-) -> tuple[MutableSequence[int], int]:
+def sort_and_count_inversions(arr: list[int]) -> tuple[list[int], int]:
     length = len(arr)
     if length <= 1:
         return arr, 0
