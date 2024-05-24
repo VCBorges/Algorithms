@@ -1,10 +1,7 @@
-from typing import MutableSequence
-from rich import print
-
 def merge(
-    right_arr: MutableSequence[int], 
-    left_arr: MutableSequence[int],
-) -> MutableSequence[int]:
+    right_arr: list[int], 
+    left_arr: list[int],
+) -> list[int]:
     merged_arr = []
     right_idx, left_idx = 0, 0
     while (
@@ -23,7 +20,7 @@ def merge(
     return merged_arr    
 
 
-def merge_sort(arr: MutableSequence[int]) -> MutableSequence[int]:
+def merge_sort(arr: list[int]) -> list[int]:
     length = len(arr)
     if length <= 1:
         return arr
