@@ -13,10 +13,9 @@ def fibonacci_sequence(n: int) -> int:
     arr = [0, 1]
     for i in range(2, n + 1):
         arr.append(arr[i - 1] + arr[i - 2])
-    return arr[n]
+    return arr
     
 input = 6
 
-# print([fibonacci_recursive(n) for n in range(input + 1)])
-print([fibonacci_sequence(n) for n in range(input + 1)])
+print(fibonacci_sequence(input))
 
