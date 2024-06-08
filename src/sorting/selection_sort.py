@@ -1,5 +1,6 @@
 from rich import print
 
+
 def naive_selection_sort(arr: list[int]) -> list[int]:
     for i in range(len(arr)):
         min_idx = i
@@ -10,7 +11,7 @@ def naive_selection_sort(arr: list[int]) -> list[int]:
     return arr
 
 
-input = [8,2,5,7,9,1,3, 1]
+input = [8, 2, 5, 7, 9, 1, 3, 1]
 
 
 print(naive_selection_sort(input))
