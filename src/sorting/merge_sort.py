@@ -27,8 +27,3 @@ def merge_sort(arr: list[int]) -> list[int]:
         right_arr=merge_sort(arr[middle_idx:]),
         left_arr=merge_sort(arr[:middle_idx]),
     )
-
-
-input = [20, 9, 2, 6, 4, 10, 11, 12, 15]
-
-print(merge_sort(input))

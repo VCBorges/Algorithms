@@ -12,15 +12,15 @@ def recursive_binary_search(
 
     if arr[midpoint] < key:
         return recursive_binary_search(
-            arr[midpoint + 1 :],
-            key,
-            start + midpoint + 1,
+            arr=arr[midpoint + 1 :],
+            key=key,
+            start=start + midpoint + 1,
         )
 
     return recursive_binary_search(
-        arr[:midpoint],
-        key,
-        start,
+        arr=arr[:midpoint],
+        key=key,
+        start=start,
     )
 
 
@@ -44,8 +44,6 @@ def iterative_binary_search(
     return None
 
 
-input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-
-# print(iterative_binary_search(input, 1))
-print(iterative_binary_search(input, 6))
+if __name__ == "__main__":
+    input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print(iterative_binary_search(input, 6))

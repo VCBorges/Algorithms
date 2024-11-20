@@ -28,6 +28,6 @@ def fibonacci_sequence(n: int) -> list[int]:
     return sequence
 
 
-input = 6
+input = 10
 
 print(fibonacci_sequence(input))

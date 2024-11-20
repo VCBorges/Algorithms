@@ -1,4 +1,9 @@
-# Byte-compiled / optimized / DLL files
+tempCodeRunnerFile.py
+.ruff_cache/
+src/coursera/
+.vscode/
+
+# Byte-compiled / optimized / DLL files*
 __pycache__/
 *.py[cod]
 *$py.class

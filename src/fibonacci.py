@@ -1,9 +1,8 @@
-def fibonacci_number(n: int) -> int:
+def iterative_fibonacci_number(n: int) -> int:
     if n <= 1:
         return n
 
-    previous = 0
-    current = 1
+    previous, current = 0, 1
     for _ in range(2, n + 1):
         current, previous = (current + previous), current
     return current
@@ -15,7 +14,7 @@ def recursive_fibonacci_number(n: int) -> int:
     return recursive_fibonacci_number(n - 1) + recursive_fibonacci_number(n - 2)
 
 
-def fibonacci_sequence(n: int) -> list[int]:
+def iterative_fibonacci_sequence(n: int) -> list[int]:
     if n <= 1:
         return n
 
@@ -25,7 +24,7 @@ def fibonacci_sequence(n: int) -> list[int]:
     return sequence
 
 
-def naive_memoized_recursive_fibonacci_number(
+def memoized_recursive_fibonacci_number(
     n: int,
     memo: dict = {},
 ) -> int:
@@ -35,12 +34,10 @@ def naive_memoized_recursive_fibonacci_number(
     if n <= 1:
         return n
 
-    memo[n] = naive_memoized_recursive_fibonacci_number(
-        n - 1
-    ) + naive_memoized_recursive_fibonacci_number(n - 2)
+    memo[n] = memoized_recursive_fibonacci_number(n - 1) + memoized_recursive_fibonacci_number(n - 2) # fmt: skip
 
     return memo[n]
 
 
 if __name__ == "__main__":
-    print(naive_memoized_recursive_fibonacci_number(10))
+    print(memoized_recursive_fibonacci_number(10))

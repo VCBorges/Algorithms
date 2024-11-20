@@ -39,6 +39,7 @@ def sort_and_count_inversions(arr: list[int]) -> tuple[list[int], int]:
     return merged_arr, split_inv + left_inv + right_inv
 
 
-input = [6, 5, 4, 4, 3, 2, 1]
+if __name__ == "__main__":
+    input = [6, 5, 4, 4, 3, 2, 1]
 
-print(sort_and_count_inversions(input))
+    print(sort_and_count_inversions(input))
