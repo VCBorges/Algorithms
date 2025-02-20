@@ -1,0 +1,22 @@
+[project]
+name = "algorithms"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "VCBorges",email = "vinicius.costa.borges98@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest (>=8.3.4,<9.0.0)",
+    "ruff (>=0.9.7,<0.10.0)",
+    "rich (>=13.9.4,<14.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "algorithms", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
