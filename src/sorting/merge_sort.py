@@ -17,13 +17,13 @@ def merge(
     return merged_arr
 
 
-def merge_sort(arr: list[int]) -> list[int]:
+def recursive_merge_sort(arr: list[int]) -> list[int]:
     length = len(arr)
     if length <= 1:
         return arr
 
     middle_idx = length // 2
     return merge(
-        right_arr=merge_sort(arr[middle_idx:]),
-        left_arr=merge_sort(arr[:middle_idx]),
+        right_arr=recursive_merge_sort(arr[middle_idx:]),
+        left_arr=recursive_merge_sort(arr[:middle_idx]),
     )

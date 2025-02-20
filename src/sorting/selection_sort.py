@@ -9,9 +9,3 @@ def naive_selection_sort(arr: list[int]) -> list[int]:
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
-
-
-input = [8, 2, 5, 7, 9, 1, 3, 1]
-
-
-print(naive_selection_sort(input))

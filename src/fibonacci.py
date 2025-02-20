@@ -34,7 +34,7 @@ def memoized_recursive_fibonacci_number(
     if n <= 1:
         return n
 
-    memo[n] = memoized_recursive_fibonacci_number(n - 1) + memoized_recursive_fibonacci_number(n - 2) # fmt: skip
+    memo[n] = memoized_recursive_fibonacci_number(n - 1) + memoized_recursive_fibonacci_number(n - 2)  # fmt: skip
 
     return memo[n]
 
