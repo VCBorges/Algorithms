@@ -42,8 +42,3 @@ def iterative_binary_search(
             low = midpoint + 1
 
     return None
-
-
-if __name__ == "__main__":
-    input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print(iterative_binary_search(input, 6))

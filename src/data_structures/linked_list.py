@@ -76,7 +76,11 @@ class SinglyLinkedList(tp.Generic[T]):
         previous_node.next = next_node
         self._lenght -= 1
 
-    def _create_node(self, value: T, next_node: SinglyNode | None = None) -> SinglyNode:
+    def _create_node(
+        self,
+        value: T,
+        next_node: SinglyNode | None = None,
+    ) -> SinglyNode:
         self._lenght += 1
         return SinglyNode(
             value=value,

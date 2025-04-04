@@ -1,6 +1,3 @@
-from rich import print
-
-
 def naive_selection_sort(arr: list[int]) -> list[int]:
     for i in range(len(arr)):
         min_idx = i

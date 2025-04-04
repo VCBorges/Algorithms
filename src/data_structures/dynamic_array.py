@@ -1,8 +1,9 @@
 import ctypes
-from typing import Any
+import typing as tp
 
+T = tp.TypeVar("T")
 
-class DynamicArray:
+class DynamicArray(tp.Generic[T]):
     def __init__(self) -> None:
         self._length = 0
         self._capacity = 4
@@ -17,14 +18,14 @@ class DynamicArray:
     def __len__(self) -> int:
         return self._length
 
-    def __getitem__(self, index: int) -> Any:
-        if index > self._length - 1:
-            raise ValueError("Index out of range")
+    def __getitem__(self, index: int) -> T:
+        if index > (self._length - 1):
+            raise IndexError("Index out of range")
         return self._array[index]
 
-    def __setitem__(self, index: int, value: Any) -> None:
-        if index > self._length - 1:
-            raise ValueError("Index out of range")
+    def __setitem__(self, index: int, value: T) -> None:
+        if index > (self._length - 1):
+            raise IndexError("Index out of range")
         self._array[index] = value
 
     def _create_array(self, size: int) -> ctypes.Array[ctypes.py_object]:
@@ -33,13 +34,12 @@ class DynamicArray:
 
     def _resize(self) -> None:
         self._capacity *= 2
-        resized_array = self._create_array(self._capacity * 2)
+        resized_array = self._create_array(self._capacity)
         for i in range(self._length):
             resized_array[i] = self._array[i]
         self._array = resized_array
-        print(f"The array was resized for a {self._capacity} capacity")
 
-    def append(self, value: Any) -> None:
+    def append(self, value: T) -> T:
         if self._length == self._capacity:
             self._resize()
         self._array[self._length] = value
